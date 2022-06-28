@@ -1,0 +1,20 @@
+<div class="container">
+  <p>Choose your drink!</p>
+
+  <% @cocktails.each do |cocktail| %>
+    <div class="card">
+      <div class="content">
+        <%= cl_image_path cocktail.photo.key %>
+        <h2 class="title"><%= cocktail.name %></h2>
+        <p class="copy"><%= cocktail.description %></p>
+        <button class="btn"><%= link_to "Details", cocktail_path(cocktail.id) %></button>
+      </div>
+    </div>
+  <% end %>
+
+  <%= simple_form_for @cocktail do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.button :submit %>
+  <% end %>
+</div>

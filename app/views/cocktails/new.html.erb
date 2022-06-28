@@ -1,0 +1,10 @@
+<div class="container">
+  <p>Became a creator drink!</p>
+
+  <%= simple_form_for(@cocktail) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :photo, label: "Image of your drink!" %>
+    <%= f.submit %>
+  <% end %>
+</div>

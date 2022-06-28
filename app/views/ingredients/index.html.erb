@@ -1,0 +1,18 @@
+<div class="container">
+  <p>this is all ingredients that you have</p>
+
+  <% @ingredients.each do |ingredient| %>
+    <ul>
+      <li><%= ingredient.name  %></li>
+    </ul>
+
+  <% end %>
+
+  <p>New ingredient</p>
+  <%= simple_form_for @ingredient do |f| %>
+    <%= f.input :name %>
+    <%= f.button :submit %>
+  <% end %>
+
+  <%= link_to "Return to all Cocktails", cocktails_path %>
+</div>
