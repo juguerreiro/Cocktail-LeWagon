@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :ingredients, only: [:create, :new, :show, :index]
   resources :doses, only: [:create, :new, :show, :index]
 
+  # post "doses", to: "doses#create", as: "taking_ingredient"
 end

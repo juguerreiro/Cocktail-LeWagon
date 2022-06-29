@@ -1,0 +1,16 @@
+<div class="container">
+  <% @doses.each do |dose| %>
+    <%= dose %>
+  <% end %>
+
+
+  <p>Now is the time to create your own doses</p>
+  <p>each drink </p>
+
+   <%= simple_form_for(@dose) do |f| %>
+    <%= f.input :description %>
+    <%= f.input :cocktail, collection: @cocktail.map { |cocktail| cocktail.name }, method: :post %>
+    <%= f.input :ingredient, collection: @ingredient.map { |ingredient| ingredient.name }, method: :post %>
+    <%= f.submit %>
+  <% end %>
+</div>
